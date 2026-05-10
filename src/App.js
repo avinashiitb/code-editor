@@ -233,7 +233,7 @@ function App() {
       } else if (language === 'sqlite') {
         result = await window.pluginAPI.runSqliteCommand(code);
       } else if (language === 'docker') {
-        result = await window.pluginAPI.runDockerCompose(code, action === 'stop' ? 'down' : 'up -d');
+        result = await window.pluginAPI.runDockerCompose(code, action === 'stop' ? 'down' : 'up -d', fileName, fileId);
       }
 
       if (typeof result === 'object' && result !== null) {
